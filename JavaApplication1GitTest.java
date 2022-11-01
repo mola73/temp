@@ -15,6 +15,7 @@ public class JavaApplication1GitTest {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        int num;
         // TODO code application logic here
     }
     
