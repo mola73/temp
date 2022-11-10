@@ -3,11 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.unbccpscassignment3;
+
 /**
  *
  * @author molaniyan
  */
+//Name: Muhammad Alfatih Olaniyan
+//Course: CPSC 100
+//ID:230148724
 import java.util.Scanner;
 public class Question2 {
     public static void main(String[]args){
@@ -18,33 +21,34 @@ public class Question2 {
       
       System.out.println("Please input a non negative number that is less than 10");
         int d2= input.nextInt();
-        
         int d3;
-        int d12;// replacemnt variables that can be used in the loop and keep the first 2 original number the same
-        int d22;// replacemnt variables that can be used in the loop and keep the first 2 original number the same
+        int d12;
+        int d22;
         d12=d1;
         d22=d2;
+        
                 
                 
         while(d1 <0 || d1>9 ){
             System.out.println("Error");
             System.out.println("Please input a non negative number that is less than 10");
-            d1= input.nextInt();       
+            d1= input.nextInt();
+          // Detterent from errors          
         } 
-        
            while(d2 <0||d2 >9){
         System.out.println("Error");
         System.out.println("Please input a non negative number that is less than 10");
         d2= input.nextInt();
+        // Detterent from errors 
         }
-           System.out.printf(" %d %d",d1, d2 );// print the first two numbers
-           
+           System.out.printf(" %d %d",d1, d2 );
+           //print first two number
         do{
-            d3=(d12+d22)%10;// get the digit besides the 1 
+            d3=(d12+d22)%10;
             System.out.printf(" %d", d3);
             d12=d22;
             d22=d3;
-        
+        //print the rest of the numbers
             
         }while(d12!=d1 || d2!=d3);
     }

@@ -1,31 +1,35 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-package com.mycompany.unbccpscassignment3;
 
 /**
  *
- * @author muham
+ * @author molaniyan
  */
-public class Question1method {
-    public static int investment(int investment){
-        int i=0;
-        int j= 0;
-        for( ; i<5; i++){
-            for( ; j< 12; j++){
-                if(i/2==0)
-                {investment += (investment/10);
-                        }else if(investment/2== 1){
-                            investment -= (investment/10);
-                                    }
-                        }
-           System.out.println(investment);
-        }
-        return investment;
-        }
-    public static void main (String[] args){
-        System.out.println(Question1method.investment(10_000));
-    }
-    }
-
+//public class Question1method {
+//    public static double investment (double investment, double interestr, int years ){
+////        double investmentm;
+////        double investmenty;
+//        double odd= investment - (investment/interestr);
+//        double even= investment+(investment/interestr);
+//        
+//        int i= 0;
+//        for(; i<years; i++){// for each year loop
+//            for(int j = 1; j<=12; j++){ //for each month loop
+//              investment = j%2==1? odd: even;//ternary op. to do odd if true and do even if false
+//              double result=investment;
+//          return result;
+//        }
+//            }
+//              
+//
+//
+//
+////public static void main(String[]args){
+////    System.out.println(Question1method.investment(10000,10,5);
+//    } return
+//    }
+//        
+//
