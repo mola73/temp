@@ -1,14 +1,12 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
 /**
  *
- * @author molaniyan
+ * @author muham
  */
-
 public class Question2 {
     public static void main(String[]args){
         for(int i= 1; i< 1000;i++){
@@ -40,6 +38,5 @@ Output:
 6 is a perfect number
 28 is a perfect number
 496 is a perfect number
-
 */
 
