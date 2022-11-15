@@ -8,6 +8,9 @@
  *
  * @author molaniyan
  */
+//Name: Muhammad Alfatih Olaniyan
+//Course:CPSC 100
+//UNBC ID:230148724
 import java.util.Scanner;
 public class Question1 {
     public static void main(String[]args){
@@ -35,7 +38,7 @@ public class Question1 {
                 break;
             default: gpa= 0;
                 
-                    
+              //check range of gpa and return      
         }
         return gpa;
     }

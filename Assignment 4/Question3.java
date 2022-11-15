@@ -7,12 +7,12 @@
 /**
  *
  * @author molaniyan
- */import java.util.ArrayList;
+ *///Name: Muhammad Alfatih Olaniyan
+//Course:CPSC 100
+//UNBC ID:230148724
 import java.util.Scanner;
 public class Question3 {
     public static void main(String[]args){
-        ArrayList <Double> inputs = new ArrayList <Double>();
-        boolean neg;
         Scanner reader= new Scanner(System.in);
         System.out.println("Are you an In or Out patient");
                 System.out.println("Please input either \"In\" or \"Out\" ");
@@ -20,32 +20,34 @@ public class Question3 {
                if(patient.equals("In")){
                    
                   double numdays= sanitation("Please input the number for days you stayed at the hospital");
-                    // method call to input anumvber and make sure it is greater than 0
+                    // method call to input a number and make sure it is greater than 0
                                      
                   double dailyrate= sanitation("Please input the daily rate of the hospital");
-                           // method call to input anumvber and make sure it is greater than 0
+                           // method call to input a number and make sure it is greater than 0
                       
                            double medcharges= sanitation("Please input the medication charges please");
                                    // method call to input anumvber and make sure it is greater than 0
                                    
                                double hospservices=sanitation("Please input the hospital services fee please");
-                                           // method call to input anumvber and make sure it is greater than 0
+                                           // method call to input a number and make sure it is greater than 0
                                                
                                            System.out.printf("Your Total is: $%,.2f" , Total(numdays, dailyrate, medcharges, hospservices));
-                                          
+                } 
+               
 //
                                              
                    // inpateint method
-               }
-               else if(patient.equals("Out")){
+               
+                if(patient.equals("Out")){
                    //outpatient method
                double  medcharges= sanitation("Please input the medication charges please");
-                    
+                    // method call to input a number and make sure it is greater than 0
                             double hospservices=sanitation("Please input the hospital services please");
-                                           
+                                           // method call to input a number and make sure it is greater than 0
                                            
                                            System.out.printf("Your Total is: $%,.2f" , Total( medcharges, hospservices));
-               }
+               
+    }
     }
         
     public static double Total(double numdays, double dailyrate, double medcharges, double hospservices){
@@ -53,22 +55,24 @@ public class Question3 {
         double Total;
        Total=(numdays * dailyrate)+ medcharges+ hospservices;
            return Total;
+           //calculate and return answer
        }
        public static double Total(double medcharges, double hospservices){
         double Total;
         Total= medcharges+ hospservices;
         return Total;
+        //calculate and return answer
     }
     public static double sanitation(String x){
        Scanner sc= new Scanner(System.in);
         
        System.out.println(x);
        double num=sc.nextDouble();
-       
+      // Ask for input
        while(num<0){
            System.out.println(x);
            num=sc.nextDouble();
-
+//if it is less than 0 it will ask for a number again
        }
               return num;
     }
