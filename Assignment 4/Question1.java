@@ -40,3 +40,22 @@ public class Question1 {
         return gpa;
     }
 }
+/*
+
+Output:
+What is your grade please?
+99
+The GPA is 4
+
+What is your grade please?
+72
+The GPA is 2
+
+What is your grade please?
+42
+The GPA is 0
+
+What is your grade please?
+83
+The GPA is 3
+*/
