@@ -1,12 +1,11 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
 /**
  *
- * @author molaniyan
+ * @author muham
  */
 public class Classwork {
     /*
@@ -49,5 +48,83 @@ public class Classwork {
     _- is private
     
     
+    November 23
+    
+    UML Diagram:
+    || | | | | || | | | | | | | | | |
+    | - hours: int
+    |  -mins : int
+    |  -secs: int
+    behaviours
+    
+    |  + TimeType()
+    |  + TimeType(int,int,int)
+    |  + SetTime(int, int, int)
+    | + getTime(); TimeType; 
+    | + display();
+    |+ icrement();
+    | equal(TimeType);: boolean
+    |
+    |
+    |
+    
+    To code this :
+    You need to 2 java files
+    
+  1.  public class TimeTypeDriver{
+    public static void main(String[]args){
+    TimeType t1 = new TimeType(); //Initialize object
+    TimeType t2=newTimeType(12,15,25);// initialize object without constructor, constructor is aoutomatically done by the compiler
+  
+    2 public class TimeType{
+    private int hours; // variables declared
+    private int minutes;
+    private int seconds;
+    
+    //declare constructors
+    public TimeType(no arguments)
+    {
+    hours=minutes=seconds=0
+    }
+    
+    public TimeType(int h, int m, int s){
+    hours=h; or this.hours=h
+    mins=m;  or this.mins=m
+    secs=s; or this.secs=s
+    
+    }
+    public TimeType getTime(){
+    TimeType s= new TimeType(h,m,s);
+    }
+    
+    public void display(){
+    s.out.printf("%2d : %2d: %2d", hours,mins,secs);
+    }
+    public void increment(){
+    secs++
+    if(secs>59){
+    mins++
+    if (mins>59){
+    hours++
+    mins=0;
+    if (hours>12){
+    hours==0;
+    }
+    mins=0;
+    }
+    secs=0;
+    }
+    }
+    public boolean equal(TimeType t){
+    //comparing two different times
+    //recieving a time object 
+    if (t.hrs== hrs && t.mins==mins&& t.sec==secs){
+    return true
+    }else false
+    }
+    
+    OR 
+    return(t.hrs== hrs && t.mins==mins&& t.sec==secs)
+    }
     */
 }
