@@ -62,7 +62,7 @@ public class Classwork {
     |  + SetTime(int, int, int)
     | + getTime(); TimeType; 
     | + display();
-    |+ icrement();
+    |+ increment();
     | equal(TimeType);: boolean
     |
     |
@@ -126,5 +126,13 @@ public class Classwork {
     OR 
     return(t.hrs== hrs && t.mins==mins&& t.sec==secs)
     }
+    
+    Novemebr 25 Tutorial:
+    constructor: building blocks of an object. Necessary parts thatamake an object, like wheels and gears for a bicycle
+    geters and setters: methods to access private instance variables.
+    : methods : actions that can be done by the object. a human moving the left or right foot.
+    
+    November 28:
+    When you write a To sting mehtod it overides the compilers ot string method
     */
 }
