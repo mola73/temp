@@ -25,7 +25,7 @@ public class Rational {
         //this.denominator=denominator
         
     }
-    public Rational add(Rational f1, Rational f2){
+    public static Rational add(Rational f1, Rational f2){
         Rational sum= new Rational();
         sum.denominator= f1.denominator *f2.denominator;
         sum.numerator= ((f1.numerator * f2.denominator)+ (f2.numerator * f1.denominator));// multiply opposite denominator to opposite numerator and add both of them.
@@ -44,10 +44,10 @@ public class Rational {
         
         return product;
     }
-    public String toString(){
-    
-    return Stringformat("%3d/%3d",numerator, denominator);
-}
+//    public String toString(){
+//    
+//    return toString("%3d/%3d",numerator, denominator);
+//}
    
     
             

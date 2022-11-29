@@ -11,7 +11,7 @@ public class DriverRational {
     public static void main(String[]args){
         Rational r1= new Rational(4,3);
         Rational r2= new Rational(5,6);
-        Rational r3= Rational 
-        System.out.print();
+      //  Rational r3= add(r1,r2);
+     //   System.out.print(r3);
     }
 }

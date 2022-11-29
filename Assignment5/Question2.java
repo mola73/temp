@@ -20,15 +20,18 @@ public class Question2 {
         int[][] bus = new int[10][6];
         int x;
         int y;
-        do{
+        int count=0;
+       while(count<=12){
             x= Random.nextInt(6);
             y= Random.nextInt(10);  
-             bus[y][x]=1;
-             
-             
-             
-        }while(bus[y][x]!=0);
-         Display(bus);
+       while(bus[y][x]!=1){
+                    bus[y][x]=1;
+            System.out.printf("%3d %3d", x,y);
+             count+=1;
+        }       
+       }
+        Display(bus);
+        
                       
 //                
 //        Scanner Reader= new Scanner(System.in);
@@ -42,22 +45,23 @@ public class Question2 {
     }
         
     
-    public static void Display(int[][] Reservation){
+    public static void Display(int[][] bus){
 
-        for(int i=0; i<Reservation.length; i++){
-//            int count=0;
-            for(int j=0; j<Reservation[i].length;j++){
+        for(int i=0; i<bus.length; i++){
+//            
+            for(int j=0; j<bus[i].length;j++){
              
                 if(j==2){
-                    System.out.print(Reservation[i][2]+"   ");
+                    System.out.print(bus[i][2]+"   ");
                 }else{
-                    System.out.print(Reservation[i][j]+" ");
+                    System.out.print(bus[i][j]+" ");
                 }
             
                 //This is for the aisle
         }
         System.out.println();
+    }   
     }
-    }
-
+    
+    
 }
