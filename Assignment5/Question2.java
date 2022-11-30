@@ -3,9 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
  /*
-HOW DO I MAKE 20% OF THE SEATS FILLED?
-Are arrays better or arraylist?
-Make seats rndom, not this
+PRINT THE FIRST COUNT AND EOCN COUNT EVRY TIME YOU FILL THE BUS.
+iNPUT COMMENTS
  */
 /**
  *
@@ -52,40 +51,41 @@ public class Question2 {
             int num = Reader.nextInt();
             Reader.nextLine();
             if (c.equals("F")) {
-                if (num == 3) {
+                switch (num){
+                    case 3: 
                     boolean allocated = false;
                     int row = 0;
-                    while (!allocated && row < 4) {
+                    while (!allocated && row < 3) {
                         allocated = Allocation3(bus, row);
                         row++;
+                        // Try and assign the concecutive seats if theya re not assigne dand ar in first clas which is row 0 to 4
                     }
                     if (firstcount >= 3 & !allocated) {
                         System.out.println("There are no  3 adjacent seats in First class, so you were assigned seperatley");
-                        allocated = Allocationrand(bus, 3, 0, 4);
-
+                        allocated = Allocationrand(bus, 3, 0, 3);
+                       // if it is not allocated withe 3 consecutive seats, then assign the seats to the first 3 open seats if the amount of available seats in firtc class is more than or equal to 3.
                     }
                     if (allocated) {
                         firstcount -= 3;
                         
                         System.out.println(firstcount);
-                        
+                        //if it is allocated in one of the above ways and the method returns true then reduce the amount of available first class seats by 3. 
                     }
-                    else{
+                    else if ( firstcount==0 && !allocated){
                         System.out.println("Could not be allocated");
                     }
-                    
-                    
-                    
-                } else if (num == 2) {
-                     boolean allocated = false;
-                    int row = 0;
-                    while (!allocated && row < 4) {
+                    break;
+                    // balanced
+                 case 2:
+                     allocated = false;
+                     row = 0;
+                    while (!allocated && row < 3) {
                         allocated = Allocation2(bus, row);
                         row++;
                     }
-                    if (firstcount >= 2 & !allocated) {
+                    if (firstcount >= 2 && !allocated) {
                         System.out.println("There are no  2 adjacent seats in First class, so you were assigned seperatley");
-                        allocated = Allocationrand(bus, 2, 0, 4);
+                        allocated = Allocationrand(bus, 2, 0, 3);
 
                     }
                     if (allocated) {
@@ -96,24 +96,101 @@ public class Question2 {
                     }else{
                         System.out.println("Could not be allocated");
                     }
+                    break;
 
 
-                } else if (num == 1) {
-                    boolean allocated= false;
-                     if (firstcount >= 2 & !allocated) {
-                        allocated = Allocationrand(bus, 1, 0, 4);
+                 case 1: 
+                     allocated= false;
+                     if (firstcount >= 1 & !allocated) {
+                        allocated = Allocationrand(bus, 1, 0, 3);
+                    }
+                     if (allocated) {
+                        firstcount -= 1;
+                        
+                        System.out.println(firstcount);
+                        
+                    }else{
+                        System.out.println("Could not be allocated");
+                    }
+                     break;
+                }
+            }
+            
+                
+             if (c.equals("E")) {
+                
+                switch(num){
+                    case 3: 
+                         boolean allocated = false;
+                    int row = 3;
+                    while (!allocated && row < 10) {
+                        allocated = Allocation3(bus, row);
+                        row++;
+                        // Try and assign the concecutive seats if theya re not assigne dand ar in first clas which is row 0 to 4
+                    }
+                    if (firstcount >= 3 & !allocated) {
+                        System.out.println("There are no  3 adjacent seats in First class, so you were assigned seperatley");
+                        allocated = Allocationrand(bus, 3, 3, 10);
+                       // if it is not allocated withe 3 consecutive seats, then assign the seats to the first 3 open seats if the amount of available seats in firtc class is more than or equal to 3.
+                    }
+                    if (allocated) {
+                        econcount -= 3;
+                        
+                        System.out.println(econcount);
+                        //if it is allocated in one of the above ways and the method returns true then reduce the amount of available first class seats by 3. 
+                    }
+                      break;
+                      
+                    case 2:
+                     allocated = false;
+                     row = 3;
+                    while (!allocated && row < 10) {
+                        allocated = Allocation2(bus, row);
+                        row++;
+                    }
+                    if (firstcount >= 2 & !allocated) {
+                        System.out.println("There are no  2 adjacent seats in First class, so you were assigned seperatley");
+                        allocated = Allocationrand(bus, 2, 3, 10);// row start is an index, row end is the size which is (1+ the last index)
 
                     }
-
+                    if (allocated) {
+                        firstcount -= 2;
+                        
+                        System.out.println(firstcount);
+                        
+                    }else{
+                        System.out.println("Could not be allocated");    
+                } 
+                    break;
+                    
+                    case 1:
+                         allocated= false;
+                     if (firstcount >= 1 & !allocated) {
+                        allocated = Allocationrand(bus, 1, 3, 10); //row start is the start index for econ, row end is the siz of economy, done like thos for for loop
+                    }
+                     if (allocated) {
+                        firstcount -= 1;
+                        
+                        System.out.println(firstcount);
+                        
+                    }else{
+                        System.out.println("Could not be allocated");
+                    }
+                    break;
+                        
                 }
-            } else if (c.equals("E")) {
-
-            } else {
-                System.out.println("Please fix the input");
             }
+            
+else {
+                System.out.println("Please fix the class input");
+            }
+            
+            
             Display(bus);
+            
 
         }
+        System.out.println("The bus is 90% full");
     }
     
 
