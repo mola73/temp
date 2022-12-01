@@ -10,6 +10,9 @@ iNPUT COMMENTS
  *
  * @author muham
  */
+//Name: Muhammad Alfatih Olaniyan
+//Class: CPSC 100
+//UNBC ID:230148724
 import java.util.Arrays;
 import java.security.SecureRandom;
 import java.util.Scanner;
@@ -19,11 +22,11 @@ public class Question2 {
     public static void main(String[] args) {
         SecureRandom Random = new SecureRandom();
 
-        int[][] bus = new int[10][6];
+        int[][] bus = new int[10][6]; // initializing array bus
         int x;
         int y;
-        int firstcount = 24;
-        int econcount = 36;
+        int firstcount = 24; // keeping track of first class number
+        int econcount = 36;// keeping track of econ class number
         int count = 0;
         while (count <= 12) {
             x = Random.nextInt(6);
@@ -38,12 +41,13 @@ public class Question2 {
 
                 count += 1;
             }
-
+// This part takes a random position in the bus array and fills it with a 1 (allocation number) if it is not already allocated, 
+// and count the amount of randomly assigned seats until it reaches 12 or 20% ofthe bus.
         }
-        Display(bus);
+        Display(bus); // after the random seats are assigned, it will print the bus.
 
         Scanner Reader = new Scanner(System.in);
-        while (firstcount + econcount > 6) {
+        while (firstcount + econcount > 6) { // if the bus is less than 90% full or open seats are greter than 6
             System.out.println("Would you like First class or Economy");
             System.out.println("Please write F for Frist class or E for Economy class");
             String c = Reader.nextLine();
@@ -58,24 +62,25 @@ public class Question2 {
                     while (!allocated && row < 3) {
                         allocated = Allocation3(bus, row);
                         row++;
-                        // Try and assign the concecutive seats if theya re not assigne dand ar in first clas which is row 0 to 4
+                        // Try and assign the concecutive seats if they are not assigned and are in first clas which is row 0 to 2
                     }
                     if (firstcount >= 3 & !allocated) {
                         System.out.println("There are no  3 adjacent seats in First class, so you were assigned seperatley");
                         allocated = Allocationrand(bus, 3, 0, 3);
-                       // if it is not allocated withe 3 consecutive seats, then assign the seats to the first 3 open seats if the amount of available seats in firtc class is more than or equal to 3.
+                       // if it is not allocated withe 3 consecutive seats, then assign the seats to the first 3 open seats if the amount of available seats in first class is more than or equal to 3.
                     }
                     if (allocated) {
                         firstcount -= 3;
                         
                         System.out.println(firstcount);
-                        //if it is allocated in one of the above ways and the method returns true then reduce the amount of available first class seats by 3. 
+                        //if it is allocated in one of the above ways and the  allocationran method returns true then reduce the amount of available first class seats by 3. 
                     }
                     else if ( firstcount==0 && !allocated){
                         System.out.println("Could not be allocated");
+                        //this is if the seats could not be allocated and first class is full
                     }
                     break;
-                    // balanced
+                    
                  case 2:
                      allocated = false;
                      row = 0;

@@ -2,11 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
+ 
 /**
  *
  * @author muham
  */
+import java.util.Scanner;
+import java.util.ArrayList;
 public class Classwork {
     /*
     VEERRY IMPORRRTAAANT FOR THTHEE FINAAL
@@ -134,5 +136,48 @@ public class Classwork {
     
     November 28:
     When you write a To sting mehtod it overides the compilers ot string method
+    
+    November 30:
+    names arryalist: [Waqar, Haque, xyz, 2, 4.5, 2, 4.5];
+    names.remove(2); removes object at index 2 off arraylist;
+    names.remove("2"); nothing happens because htere is no string of 2, only an Integer.
+    names.remove(Integer.valueOf(2)); removes the first 2 in the array list
+    names.remove(4.5); it removes 4.5 from the arryalist because there is no anmbiguity
+    
+    names.removeAll(4.5); THIS IS AN ERROR because it has to be a collection like an array or arraylist;
+    like(
+    Arraylist temp= new ArrayList();
+    temp.add(4.5);
+    names.remove(temp); now it it will remove the 4.5 , if you add more numbers in the aralist it will also remove those.
+    )
+    
+    Collections.sort(names); sorts the arryalist according to ASCII TABLE (ascending order)
+    names.indexOf(...);  where is the the value in the brackets.
+    for example name.indexof(2); this gives 3, becaus that is its index form left to right.
+    names.lastIndexOf(...); this returns index of the value from right to left ore end to beginning;
+    
+    ///TRY CS TESTS ONLINE FOR PRACTCE FOR THE FINAL
+    //Study ch 1-8, 14,15
+    // tf , fill in th eblanks 50pt, code segments 45pts, multiple choice 54 points;
+    
+    Their
     */
+    public static void main(String[]args){
+        Scanner sc= new Scanner(System.in);
+       Arraylist <Integer> numbs= new <Integer>(); 
+       System.out.println("please give a number");
+       int x= sc.nextInt();
+       int count=0;
+       if(numbs.contain(x)){
+        for(int i= 0; i<numbs.size(); i++){
+            if(x== numbs.get(i)){
+                count+=1;
+        }
+        System.out.println(count);
+       
+    }else{
+    System.out.println("It is not in the list");
+}
+}
+    }
 }
