@@ -28,11 +28,12 @@ public class Question1bns {
      ArrayList <String> gNameperc= new ArrayList <>();//Initializing  boy and girl name percentage arraylists
     ArrayList <String> bNameperc= new ArrayList <>();
      ArrayList <String> rank= new ArrayList <>();
+     
+     String infile= "C:\\Users\\muham\\OneDrive\\Desktop\\UNBC CS1\\Assignment5\\src\\main\\java\\babynames.txt";
+     String outfile= "C:\\Users\\muham\\OneDrive\\Desktop\\UNBC CS1\\Assignment5\\src\\main\\java\\bgnames.txt";
  
-         File Namein = new File("C:\\Users\\muham\\OneDrive\\Desktop\\UNBC CS1\\Assignment5\\src\\main\\java\\babynames.txt");
-        
-//        File Nameout = new File("bgnames.txt");
-        File Nameout = new File("C:\\Users\\muham\\OneDrive\\Desktop\\UNBC CS1\\Assignment5\\src\\main\\java\\bgnames.txt");
+         File Namein = new File(infile);
+         File Nameout = new File(outfile);
         
         
         if(Namein.exists()){

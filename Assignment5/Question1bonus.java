@@ -39,9 +39,8 @@ public class Question1bonus {
         ArrayList<String> bNameperc = new ArrayList<>();
         ArrayList<String> rank = new ArrayList<>();
 
-        //File Namein= new File("babynames.txt");
-        File Namein = new File("C:\\Users\\muham\\OneDrive\\Desktop\\UNBC CS1\\Assignment5\\src\\main\\java\\babynames.txt");
-        System.out.println(Namein.getAbsoluteFile());
+        String infile = "C:\\Users\\muham\\OneDrive\\Desktop\\UNBC CS1\\Assignment5\\src\\main\\java\\babynames.txt";
+        File Namein = new File(infile);// initializing in file
         Scanner scan = new Scanner(Namein); // Tool to take in values from the babynames file
 
         while (scan.hasNext()) {
