@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-Make a display method 
+//Name: Muhammad Alfatih Olaniyan
+//Class: CPSC 100
+//UNBC ID:230148724
 
 /**
  *
@@ -10,6 +12,7 @@ Make a display method
  */
 public class EmployeeTest {
     public static void main(String[]args){
+        //2 employee objects
         Employee A= new Employee("Mark", "Evan", 1000);
         Employee B= new Employee("Kevin", "Sanders", 2000);
         

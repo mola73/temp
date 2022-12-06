@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
+//Name: Muhammad Alfatih Olaniyan
+//Class: CPSC 100
+//UNBC ID:230148724
 /**
  *
  * @author muham
@@ -52,8 +55,9 @@ public class Employee {
         double YSalary= 12 * Salary;
         return YSalary;
     }
-//    public double Raise(double percentageraise, double Salary ){
-//        this.Salary= Salary+ ((percentageraise/100)* Salary);
-//        return Salary;
-//    }
+    //Raise the monnthly salary by a certin percentage
+    public double Raise(double percentageraise, double Salary ){
+        this.Salary= Salary + ((percentageraise/100)* Salary);
+        return Salary;
+    }
 }

@@ -2,10 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
- /*
-PRINT THE FIRST COUNT AND EOCN COUNT EVRY TIME YOU FILL THE BUs
-THE CODE FOES NOT REACH THE END
- */
+
 /**
  *
  * @author muham
@@ -13,7 +10,7 @@ THE CODE FOES NOT REACH THE END
 //Name: Muhammad Alfatih Olaniyan
 //Class: CPSC 100
 //UNBC ID:230148724
-import java.util.Arrays;
+
 import java.security.SecureRandom;
 import java.util.Scanner;
 
@@ -234,7 +231,7 @@ public class Question2 {
         }
         return false;
     }
-
+// if 3 adjacent seats are 0 make them 
     public static boolean Allocation2(int bus[][], int row) {
         if (bus[row][0] == 0 && bus[row][1] == 0) {
             bus[row][0] = 1;
@@ -255,7 +252,7 @@ public class Question2 {
         }
         return false;
     }
-
+//if 2 adjacent seats are 0 make them 1
     public static boolean Allocationrand(int bus[][], int seats, int rowstart, int rowend) {
         int count = 0;
         for (int i = rowstart; i < rowend; i++) {
@@ -274,5 +271,5 @@ public class Question2 {
 
         return false;
     }
-
+// assign the first open seat.
 }

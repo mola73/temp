@@ -1,13 +1,4 @@
-/*
-Ask user for a name
-disregard caps or not
-If the name is equal to one of the names in boy, print its information (Use .equals because the names are strings) 
-if the name is equal to one of the names in girl, print its info,
-if it is in both print all the info.
 
-Use .index for searching
-If the index exists for the name print the rest of the info, else print that it is not
- */
 //Name: Muhammad Alfatih Olaniyan
 //Class: CPSC 100
 //UNBC ID:230148724
