@@ -113,6 +113,13 @@ Pargram 2 memory:
     threads share memrory
     programs do not share memory
     
+    1/11/2023:
+    
+    Value is different form effect
+               value   effect
+    i=3;
+    ++i:       4        4  
+    i++:       3         4 
     
     
     
@@ -120,72 +127,10 @@ Pargram 2 memory:
     
     
     */
-    private static final String[] ones = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
-
-    private static final String[] teens = {"ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
-
-    private static final String[] tens = {"twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
-
-    private static final String[] bigs = {"hundred", "thousand", "million"};
-    
-     public static void main(String[]args) {// THIS WORKS BUT STIL CHECK FIRST (The program is not printing the hundreds, fix that and apply to folowing programs
-      
-String words="";
-        int n= 9234567/1000000;
-        for (int counter = 0; counter <3; counter++) {
-            switch (counter) {
-                case 0:
-                    if (n != 0 && n % 10 != 0) {
-                        words = ones[(n % 10) - 1];
-                        System.out.println(words);
-                        System.out.println(n);
-
-                    }
-                    break;
-                case 1:
-                    if (((n % 100) / 10) == 1 && (n != 0) && ((n%100)/10) !=0) { //if it is in between11 and 19
-                        words = teens[(n % 10)];
-                        n = n / 100;
-                        System.out.println();
-                        System.out.println(words);
-                        System.out.println(n);
-                    }
-
-                    if (((n % 100) / 10) > 1) {//if it is above 19
-                        words = tens[((n % 100) / 10) - 2] + " "+ words;
-
-                        n = n / 100;
-                        System.out.println();
-                        System.out.println(words);
-                        System.out.println(n);
-                    }
-                   if((n%10==0)&&(n%100==0)){ //if it is 100,200, 300.....
-                    n=n/100; //if the number is not a teen or somesort of ten then remove the first two digits( for the digits 1 and 100)
-                    System.out.println();
-                    System.out.println(words);
-                    System.out.println(n);
-                } 
-                    break;
-
-                case 2:
-                    if (n != 0 && (n%1000)!=0) { //for hundreds
-                        words = ones[((n % 10)- 1)] + " " + bigs[0] +" "+ words;
-                        n = n / 10;
-                        System.out.println();
-                        System.out.println(words);
-                        System.out.println(n);
-                    }
-                      
-                   
-                    break;
+   for(int counter=0;counter<3;counter++){
+                if(counter==1&& temp>0){
+                x=1;
+            }else{x=0;
             }
-        }
-        
-        words= words + " "+ bigs[2];
-       System.out.println(words);
-        
-        
-        
-    
-}
+                
 }

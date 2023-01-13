@@ -8,22 +8,21 @@
  * @author muham
  */
 public class NumToStringTest {
-    
-    public static void main (String[]args){
-System.out.println(NumToString2.numbToString(1000000)); 
-//System.out.println(NumToString2.numbToString(12000000)); 
-//System.out.println(NumToString2.numbToString(123000000)); 
-//System.out.println(NumToString2.numbToString(111111111)); 
-//System.out.println(NumToString2.numbToString(132117728)); 
-//System.out.println(NumToString2.numbToString(999999999)); 
-//System.out.println();
-//System.out.println(NumToString2.numbToStringhund(35));
-//System.out.println(NumToString2.numbToStringhund(810));
-//System.out.println(NumToString2.numbToStringhund(145));
-//System.out.println(NumToString2.numbToStringhund(100));
-//System.out.println(NumToString2.numbToStringhund(987));
-//System.out.println(NumToString2.numbToStringthous(110234));
-System.out.println(1%10);
-    }
-}
 
+    public static void main(String[] args) {//Have two arrays and run through both of them to see if they are the same.
+        String[] convertnum = {(NumToString3.numbToString(1)), (NumToString3.numbToString(10)), (NumToString3.numbToString(15)), (NumToString3.numbToString(99)), (NumToString3.numbToString(999)), (NumToString3.numbToString(999999)), (NumToString3.numbToString(10001)), (NumToString3.numbToString(12345678)), (NumToString3.numbToString(999999999)), (NumToString3.numbToString(100))};
+        String[] wordform = {"one ", "ten ", "fifteen ", "ninety-nine ", "ninehundredninety-nine ", "ninehundredninety-ninethousandninehundredninety-nine ", "tenthousandone ", "twelvemillionthreehundredforty-fivethousandsixhundredseventy-eight ", "ninehundredninety-ninemillionninehundredninety-ninethousandninehundredninety-nine ", "onehundred "};
+
+        for (int i = 0; i < convertnum.length; i++) {
+
+            int ans = wordform[i].compareTo(convertnum[i]);
+            if (ans == 0) {
+                System.out.println(ans);
+                System.out.println("true");
+            } else {
+                System.out.println("false");
+            }
+        }
+    }
+
+}
