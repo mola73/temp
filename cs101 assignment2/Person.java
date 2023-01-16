@@ -1,12 +1,12 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-package com.mycompany.assignment2cs101;
 
 /**
  *
- * @author muham
+ * @author molaniyan
  */
 /**
 This file is part of a solution to
@@ -15,33 +15,45 @@ CPSC 101 Lab 2 Winter 2023
  * @author Muhammad Alfatih Olaniyan
  * Student Number: 230148724
 * @version 1
-
 */
 import java.util.ArrayList;
 public class Person {
-//    public static int numberLiving();
+    //    public static int numberLiving();
 //public static int numberDead();
 
     private String name;
     private boolean alive;
     private String killer;// to know who killed whom
-    private static ArrayList <Person> thePeople;
+    private static ArrayList <Person> thePeople= new ArrayList();
     
      public Person(){
     this.name=null;
     this.killer=null;
     this.alive=true;
+    thePeople.add(this);
 }
      public Person(String name,boolean alive){
     this.name=name;
     this.killer=null;
     this.alive=true;
+    thePeople.add(this);
      }
     public Person(String name,boolean alive, String killer){//construcotr
         this.name=name;
         this.killer=null;
         this.alive=alive;
+        thePeople.add(this);
         
+    }
+   
+    public static String toString(ArrayList thePeople){
+        for(Person x: thePeople){
+            return String.format("%s",x.name);
+        }
+        
+    }
+    public static ArrayList<Person> getthePeople(){
+        return thePeople;
     }
   
     public String getkiller(){
