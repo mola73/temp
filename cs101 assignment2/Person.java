@@ -1,12 +1,12 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+package com.mycompany.assignment2cs101;
 
 /**
  *
- * @author molaniyan
+ * @author muham
  */
 /**
 This file is part of a solution to
@@ -15,10 +15,11 @@ CPSC 101 Lab 2 Winter 2023
  * @author Muhammad Alfatih Olaniyan
  * Student Number: 230148724
 * @version 1
+
 */
 import java.util.ArrayList;
 public class Person {
-    //    public static int numberLiving();
+//    public static int numberLiving();
 //public static int numberDead();
 
     private String name;
@@ -45,23 +46,19 @@ public class Person {
         thePeople.add(this);
         
     }
-   
-    public static String toString(ArrayList thePeople){
-        for(Person x: thePeople){
-            return String.format("%s",x.name);
-        }
-        
+   @Override
+    public String toString(){
+     
+            return name;   
     }
-    public static ArrayList<Person> getthePeople(){//keep for testing, when you submit delete
+    public ArrayList<Person> getthePeople(){//keep for testing, when you submit delete
         return thePeople;
     }
   
     public String getkiller(){
        return killer ;
     }
-    public void listadd(Person x){//add new people to the arraylist of people
-        thePeople.add(x);
-    }
+    
     public boolean isAlive(Person n){ //return state fo person
         return n.alive;       
         }
@@ -73,9 +70,9 @@ public class Person {
     public void die(Person n){//take life of  perosn
         n.alive= false;
     }
-    public void kill(Person killer,Person victim){
+    public void kill(Person victim){
         die(victim);
-        victim.killer=this.name;//
+        victim.killer=this.name;
         
     }
     public void sayHello(Person n){
@@ -108,6 +105,4 @@ public class Person {
             }
      }
      }
-    
-    
 }
