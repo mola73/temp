@@ -52,7 +52,7 @@ public class Person {
         }
         
     }
-    public static ArrayList<Person> getthePeople(){
+    public static ArrayList<Person> getthePeople(){//keep for testing, when you submit delete
         return thePeople;
     }
   
@@ -75,7 +75,7 @@ public class Person {
     }
     public void kill(Person killer,Person victim){
         die(victim);
-        victim.killer=killer.name;
+        victim.killer=this.name;//
         
     }
     public void sayHello(Person n){

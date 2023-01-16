@@ -23,7 +23,7 @@ public class PersonTester {
           c.sayHello(c);
           f.sayHello(f);
           System.out.println(e.getkiller());
-          System.out.println(thePeople);
+         // System.out.println(thePeople);
     }
 }
 
