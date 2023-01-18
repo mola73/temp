@@ -1,25 +1,20 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-package com.mycompany.assignment2cs101;
 
-/**
- *
- * @author muham
- */
 /**
 This file is part of a solution to
 CPSC 101 Lab 2 Winter 2023
  * Implements a murder program
- * @author Muhammad Alfatih Olaniyan
+ * @author molaniyan Muhammad Alfatih Olaniyan
  * Student Number: 230148724
 * @version 1
-
 */
 import java.util.ArrayList;
 public class Person {
-//    public static int numberLiving();
+    //    public static int numberLiving();
 //public static int numberDead();
 
     private String name;
@@ -55,29 +50,40 @@ public class Person {
         return thePeople;
     }
   
-    public String getkiller(){
-       return killer ;
+    public String murderer(){//delete this before submitting
+       return this.killer ;
     }
     
-    public boolean isAlive(Person n){ //return state fo person
-        return n.alive;       
-        }
-    public String name(Person n){//return name of person
+        public String name(Person n){//return name of person
         if(!n.alive){
             return String.format("DECEASED %s", n.name);
         }else return n.name;
     }
-    public void die(Person n){//take life of  perosn
-        n.alive= false;
-    }
-    public void kill(Person victim){
-        die(victim);
-        victim.killer=this.name;
         
+    public boolean isAlive(){ //return state fo person
+        return this.alive;       
+        }
+    
+    public void die(){//take life of  perosn
+        if(this.alive==true){
+        this.alive= false;
+        }
     }
-    public void sayHello(Person n){
-        if(isAlive(n)==true){
-        System.out.printf("Hello, I'm %s.%n",n.name);
+    
+    public void murder(Person victim){
+        if(this.alive && victim.alive){
+        victim.die();
+        victim.killer=this.name;
+    }else if(!this.alive){ 
+        System.out.printf("The murderer: %s is not alive", this.name);
+    }else if(!victim.alive){
+        System.out.printf("%s is already dead",victim.name);
+    }
+    }
+    
+    public void sayHello(){
+        if(this.isAlive()==true){
+        System.out.printf("Hello, I'm %s.%n",this.name);
         }
     }
     public static int numberLiving(){
