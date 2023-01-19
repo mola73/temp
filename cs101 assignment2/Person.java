@@ -1,29 +1,31 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+package com.mycompany.assignment2cs101;
 
+/**
+ *
+ * @author muham
+ */
 /**
 This file is part of a solution to
 CPSC 101 Lab 2 Winter 2023
  * Implements a murder program
- * @author molaniyan Muhammad Alfatih Olaniyan
+ * @author Muhammad Alfatih Olaniyan
  * Student Number: 230148724
 * @version 1
+
 */
 import java.util.ArrayList;
 public class Person {
-    //    public static int numberLiving();
-//public static int numberDead();
-
-    private String name;
+private String name;
     private boolean alive;
     private String killer;// to know who killed whom
     private static ArrayList <Person> thePeople= new ArrayList();
     
-     public Person(){
-    this.name=null;
+     public Person(String name){
+    this.name=name;
     this.killer=null;
     this.alive=true;
     thePeople.add(this);
@@ -41,11 +43,6 @@ public class Person {
         thePeople.add(this);
         
     }
-   @Override
-    public String toString(){
-     
-            return name;   
-    }
     public ArrayList<Person> getthePeople(){//keep for testing, when you submit delete
         return thePeople;
     }
@@ -54,10 +51,10 @@ public class Person {
        return this.killer ;
     }
     
-        public String name(Person n){//return name of person
-        if(!n.alive){
-            return String.format("DECEASED %s", n.name);
-        }else return n.name;
+        public String name(){//return name of person
+        if(!this.alive){
+            return String.format("DECEASED %s", this.name);
+        }else return this.name;
     }
         
     public boolean isAlive(){ //return state fo person
@@ -89,18 +86,20 @@ public class Person {
     public static int numberLiving(){
         int counter=0;
         for (Person x:thePeople){
-            if(x.alive==true){
-                counter++;      
+            if(x.isAlive()==true){
+                counter=counter +1;      
             }
+           
         }
         return counter;
     }
      public static int numberDead(){
         int counter=0;
         for (Person x:thePeople){
-            if(x.alive==false){
+            if(x.isAlive()==false){
                 counter++;      
             }
+            
         }
         return counter;
     }
@@ -111,4 +110,10 @@ public class Person {
             }
      }
      }
+   @Override
+    public String toString(){
+     
+            return name;   
+    }
+
 }
