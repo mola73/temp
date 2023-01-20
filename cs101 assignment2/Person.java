@@ -72,9 +72,9 @@ private String name;
         victim.die();
         victim.killer=this.name;
     }else if(!this.alive){ 
-        System.out.printf("The murderer: %s is not alive", this.name);
+        System.out.printf("The murderer: %s is not alive%n", this.name);
     }else if(!victim.alive){
-        System.out.printf("%s is already dead",victim.name);
+        System.out.printf("%s is already dead%n",victim.name);
     }
     }
     
