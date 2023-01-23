@@ -1,15 +1,15 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package Version2;
 
 /**
  *
- * @author muham
+ * @author molaniyan
  */
 public class Time {
-
     private int seconds;
 
     public Time() {//creates midnight
@@ -18,7 +18,7 @@ public class Time {
     }
 
     public Time(int s) {
-        if (s <= 60) {
+        if (s >= 0) {
             this.seconds = s;
         } else {
             this.seconds = 0;
@@ -28,7 +28,7 @@ public class Time {
 
     public Time(Time t) {
 
-        if (t.seconds <= 60) {
+        if (t.seconds >= 0) {
             this.seconds = t.seconds;
         } else {
             this.seconds = 0;
@@ -38,19 +38,28 @@ public class Time {
 
     //Accesor methods
     public int gethour() {
-        int hour = this.seconds / 3600;;
+        int hour = this.seconds / 3600;
 
         return hour;
     }
 
     public int getminute() {
-        int minutes = (this.seconds % 3600) / 60;
+        int minutes = 0;
+        int num=this.seconds%3600;
+        while(num>=60){
+            ++minutes;
+            num=num-60;
+            
+        }
         return minutes;
     }
 
     public int getseconds() {
-        int second = ((this.seconds % 3600) % 60);
-        return second;
+        int num=this.seconds;
+        while(num>=60){
+            num=num-60; 
+        }
+        return num;
     }
 
     //Mutator
