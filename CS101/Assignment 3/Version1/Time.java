@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -74,32 +75,32 @@ public class Time {
 
     //Mutator
     public void advanceBy(int seconds) {//check this
-        int counter = 0;
-        if (seconds + this.seconds < 60) {
-            this.seconds = seconds + this.seconds;
-        } 
-        if (this.seconds + seconds >= 60) {
-            counter = seconds / 60;
-            while (counter != 0) {
-                ++this.minutes;
-                --counter;
-            }
-            this.seconds = seconds % 60;
 
-        }  
-        if (this.seconds + seconds >= 3600) {
-            counter = seconds / 3600;
-            while (counter != 0) {
-                ++this.hours;
-                --counter;
-            }
-                
-             this.minutes = (seconds / 60)/60;
-        this.seconds = (seconds % 3600) ;
-        }
-       
+       this.hours=  currhour(seconds)+ this.hours;
+       this.minutes=currmin(seconds)+ this.minutes;
+       this.seconds= currsec(seconds)+ this.seconds;
     }
-
+private int currhour(int seconds){
+    int hour= seconds/3600;
+    return hour;
+}
+private int currmin(int seconds){//fix this
+     int min = 0;
+        int num=seconds%3600;
+        while(num>=60){
+            ++minutes;
+            num=num-60;
+            
+        }
+        return min;
+}
+private int currsec(int seconds){
+    int num=seconds%3600;
+        while(num>=60){
+            num=num-60; 
+        }
+        return num;
+}
 
 @Override
 public String toString(){
