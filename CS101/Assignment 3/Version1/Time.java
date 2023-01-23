@@ -77,7 +77,8 @@ public class Time {
         int counter = 0;
         if (seconds + this.seconds < 60) {
             this.seconds = seconds + this.seconds;
-        } else if (this.seconds + seconds >= 60) {
+        } 
+        if (this.seconds + seconds >= 60) {
             counter = seconds / 60;
             while (counter != 0) {
                 ++this.minutes;
@@ -85,15 +86,18 @@ public class Time {
             }
             this.seconds = seconds % 60;
 
-        } else if (this.seconds + seconds >= 3600) {
+        }  
+        if (this.seconds + seconds >= 3600) {
             counter = seconds / 3600;
             while (counter != 0) {
                 ++this.hours;
                 --counter;
             }
+                
+             this.minutes = (seconds / 60)/60;
+        this.seconds = (seconds % 3600) ;
         }
-        this.minutes = seconds % 3600;
-        this.seconds = (seconds / 3600) % 60;
+       
     }
 
 
@@ -102,19 +106,33 @@ public String toString(){
 return String.format("%d : %d : %d",hours,minutes,seconds);
 
 }
+public int compareTo(Time t) { 
+int count=0;
+if(t.hours!=this.hours){
+    count=Math.abs(this.hours-t.hours)*3600;
+}
+if(t.minutes!=this.minutes){
+    count=count+Math.abs(this.minutes-t.minutes)*60;
+}
+
+if(t.seconds!=this.seconds){
+     count=count+Math.abs(this.seconds-t.seconds);
+}
+//that produces the number of seconds from t to this. 
+//That is,t.advanceBy(this.compareTo(t)) should set t to the same time as this.
+
+return count;
 }
 
 
-
-
-
-//public int compareTo(Time t) { ... }
-//that produces the number of seconds from t to this. That is,
-//t.advanceBy(this.compareTo(t)) should set t to the same time as this.
-//
-//
-//
-// public boolean equals(Time another) { ... }
+public boolean equals(Time another) { 
+//if(this.hours==another.hours&&this.minutes==another.minutes&&this.seconds==another.seconds){
+//    return true;
+//}
+//else return false;
 //that returns true if and only if the times have the same value.
 //Figure 1:
-//}
+return this.hours==another.hours&&this.minutes==another.minutes&&this.seconds==another.seconds;
+
+}
+}
