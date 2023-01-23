@@ -9,14 +9,10 @@ package Tests;
  *
  * @author molaniyan
  */
-import Version1.Time;
-public class TimeTest {
-    
-    public static void main (String[]args){
-    Time a=new Time(12,12,12);
-    Time b=new Time();
-    b.advanceBy(12345);
-    
-    System.out.println( b);
+import java.util.ArrayList;
+import java.util.Arrays;
+public class Sort {
+    public static void main(String[]args){
+        //ArrayList Time
     }
 }

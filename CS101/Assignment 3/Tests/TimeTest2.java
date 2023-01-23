@@ -9,14 +9,11 @@ package Tests;
  *
  * @author molaniyan
  */
-import Version1.Time;
-public class TimeTest {
-    
-    public static void main (String[]args){
-    Time a=new Time(12,12,12);
-    Time b=new Time();
-    b.advanceBy(12345);
-    
-    System.out.println( b);
+import Version2.Time;
+public class TimeTest2 {
+    public static void main(String[]args){
+        Time a=new Time();
+        Time b=new Time(3600);
+               System.out.println(a.equals(b));
     }
 }
