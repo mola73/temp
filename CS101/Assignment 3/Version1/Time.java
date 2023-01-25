@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -73,19 +74,23 @@ public class Time {
     }
 
     //Mutator
-    public void advanceBy(int seconds) {//check this
+    public void advanceBy(int seconds) {//check this FOR NEGATIVE ADVANCEMENT FORM 0 TO 23 TO 22
 if(seconds>0){
        this.hours=  currhour(seconds)+ this.hours;
        this.minutes=currmin(seconds)+ this.minutes;
        this.seconds= currsec(seconds)+ this.seconds;
 }
-else{
-     this.hours=  24+ (currhour(seconds)+ this.hours);
-       this.minutes=59+currmin(seconds)+ this.minutes;
+else if (seconds<-3600){
+     this.hours=  23+ (currhour(seconds)+ this.hours);
+       this.minutes=60+currmin(seconds)+ this.minutes;
        this.seconds= 60+ currsec(seconds)+ this.seconds;
+}else if((seconds>-3600)&&(seconds<0)){
+    this.hours=(currhour(seconds)+ this.hours);
+       this.minutes=59+currmin(seconds)+ this.minutes;
+       this.seconds= 59+ currsec(seconds)+ this.seconds;
 }
     }
-private int currhour(int seconds){
+private int currhour(int seconds){//works for positive numbers not neg.
     int hour=0;
     while((seconds>86400)||(seconds<-86400)){//simplify time to be in limit of one day:86400seconds
         seconds=seconds%86400;
@@ -93,7 +98,7 @@ private int currhour(int seconds){
      hour= seconds/3600; 
    return hour; 
 }
-private int currmin(int seconds){//fix this
+private int currmin(int seconds){//works for positive numbers not neg.
      int min = 0;
       while((seconds>86400)||(seconds<-86400)){
         seconds=seconds%86400;
@@ -106,7 +111,7 @@ private int currmin(int seconds){//fix this
         }
         return min;
 }
-private int currsec(int seconds){
+private int currsec(int seconds){//works for positive numbers not neg.
     while((seconds>86400)||(seconds<-86400)){
         seconds=seconds%86400;
     }
