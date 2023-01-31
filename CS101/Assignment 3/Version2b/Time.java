@@ -4,16 +4,13 @@
  */
 package Version2b;
 
-
-
 /**
  *
  * @author muham
  */
-public class Time implements Comparable<Time>{
-    
+public class Time implements Comparable<Time> {
 
-   private int seconds;
+    private int seconds;
 
     public Time() {//creates midnight
 
@@ -29,7 +26,7 @@ public class Time implements Comparable<Time>{
 
     }
 
-    public TimeTime t) {
+    public Time(Time t) {
 
         if (t.seconds >= 0) {
             this.seconds = t.seconds;
@@ -39,28 +36,32 @@ public class Time implements Comparable<Time>{
 
     }
 
+    public void setseconds(int seconds) {
+        this.seconds = seconds;
+    }
+
     //Accesor methods
-    public int gethour() {
+    public int gethours() {
         int hour = this.seconds / 3600;
 
         return hour;
     }
 
-    public int getminute() {
+    public int getminutes() {
         int minutes = 0;
-        int num=this.seconds%3600;
-        while(num>=60){
+        int num = this.seconds % 3600;
+        while (num >= 60) {
             ++minutes;
-            num=num-60;
-            
+            num = num - 60;
+
         }
         return minutes;
     }
 
     public int getseconds() {
-        int num=this.seconds;
-        while(num>=60){
-            num=num-60; 
+        int num = this.seconds;
+        while (num >= 60) {
+            num = num - 60;
         }
         return num;
     }
@@ -73,14 +74,12 @@ public class Time implements Comparable<Time>{
 
     @Override
     public String toString() {
-        return String.format("%d : %d : %d", this.gethour(), this.getminute(), this.getseconds());
+        return String.format("%d : %d : %d", this.gethours(), this.getminutes(), this.getseconds());
 
     }
 
+    @Override
     public int compareTo(Time t) {
-
-//that produces the number of seconds from t to this. 
-//That is,t.advanceBy(this.compareTo(t)) should set t to the same time as this.
         return this.seconds - t.seconds;
     }
 
