@@ -1,4 +1,3 @@
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -22,7 +21,7 @@ public class Time {
         this.seconds = 0;
     }
 
-    public Time(int h, int s, int m) {
+    public Time(int h, int m, int s) {
         if (h <= 24) {
             this.hours = h;
         } else {
@@ -61,11 +60,11 @@ public class Time {
     }
 
     //Accesor methods
-    public int gethour() {
+    public int gethours() {
         return this.hours;
     }
 
-    public int getminute() {
+    public int getminutes() {
         return this.minutes;
     }
 
@@ -73,87 +72,90 @@ public class Time {
         return this.seconds;
     }
 
+    public void setseconds(int seconds) {
+        this.seconds = seconds;
+    }
+
+    public void setminutes(int minutes) {
+        this.minutes = minutes;
+    }
+
+    public void sethours(int hours) {
+        this.hours = hours;
+
+    }
+
     //Mutator
     public void advanceBy(int seconds) {//check this FOR NEGATIVE ADVANCEMENT FORM 0 TO 23 TO 22
-if(seconds>0){
-       this.hours=  currhour(seconds)+ this.hours;
-       this.minutes=currmin(seconds)+ this.minutes;
-       this.seconds= currsec(seconds)+ this.seconds;
-}
-else if (seconds<-3600){
-     this.hours=  23+ (currhour(seconds)+ this.hours);
-       this.minutes=60+currmin(seconds)+ this.minutes;
-       this.seconds= 60+ currsec(seconds)+ this.seconds;
-}else if((seconds>-3600)&&(seconds<0)){
-    this.hours=(currhour(seconds)+ this.hours);
-       this.minutes=59+currmin(seconds)+ this.minutes;
-       this.seconds= 59+ currsec(seconds)+ this.seconds;
-}
+        if (seconds > 0) {
+            this.hours = currhour(seconds) + this.hours;
+            this.minutes = currmin(seconds) + this.minutes;
+            this.seconds = currsec(seconds) + this.seconds;
+        }
+
     }
-private int currhour(int seconds){//works for positive numbers not neg.
-    int hour=0;
-    while((seconds>86400)||(seconds<-86400)){//simplify time to be in limit of one day:86400seconds
-        seconds=seconds%86400;
+
+    private int currhour(int seconds) {//works for positive numbers not neg.
+        int hour = 0;
+        while ((seconds > 86400) || (seconds < -86400)) {//simplify time to be in limit of one day:86400seconds
+            seconds = seconds % 86400;
+        }
+        hour = seconds / 3600;
+        return hour;
     }
-     hour= seconds/3600; 
-   return hour; 
-}
-private int currmin(int seconds){//works for positive numbers not neg.
-     int min = 0;
-      while((seconds>86400)||(seconds<-86400)){
-        seconds=seconds%86400;
-    }
-        int num=seconds%3600;
-        while(num>=60){
+
+    private int currmin(int seconds) {//works for positive numbers not neg.
+        int min = 0;
+        while ((seconds > 86400) || (seconds < -86400)) {
+            seconds = seconds % 86400;
+        }
+        int num = seconds % 3600;
+        while (num >= 60) {
             ++min;
-            num=num-60;
-            
+            num = num - 60;
+
         }
         return min;
-}
-private int currsec(int seconds){//works for positive numbers not neg.
-    while((seconds>86400)||(seconds<-86400)){
-        seconds=seconds%86400;
     }
-    int num=(seconds%3600)%60;
-        while(num>=60){
-            num=num-60; 
+
+    private int currsec(int seconds) {//works for positive numbers not neg.
+        while ((seconds > 86400) || (seconds < -86400)) {
+            seconds = seconds % 86400;
+        }
+        int num = (seconds % 3600) % 60;
+        while (num >= 60) {
+            num = num - 60;
         }
         return num;
-}
+    }
 
-@Override
-public String toString(){
-return String.format("%d : %d : %d",hours,minutes,seconds);
+    @Override
+    public String toString() {
+        return String.format("%d : %d : %d", hours, minutes, seconds);
 
-}
-public int compareTo(Time t) { 
-int count=0;
-if(t.hours!=this.hours){
-    count=Math.abs(this.hours-t.hours)*3600;
-}
-if(t.minutes!=this.minutes){
-    count=count+Math.abs(this.minutes-t.minutes)*60;
-}
+    }
 
-if(t.seconds!=this.seconds){
-     count=count+Math.abs(this.seconds-t.seconds);
-}
+    public int compareTo(Time t) {
+        int count = 0;
+        if (t.hours != this.hours) {
+            count = Math.abs(this.hours - t.hours) * 3600;
+        }
+        if (t.minutes != this.minutes) {
+            count = count + Math.abs(this.minutes - t.minutes) * 60;
+        }
+
+        if (t.seconds != this.seconds) {
+            count = count + Math.abs(this.seconds - t.seconds);
+        }
 //that produces the number of seconds from t to this. 
 //That is,t.advanceBy(this.compareTo(t)) should set t to the same time as this.
 
-return count;
-}
+        return count;
+    }
 
+    public boolean equals(Time another) {
 
-public boolean equals(Time another) { 
-//if(this.hours==another.hours&&this.minutes==another.minutes&&this.seconds==another.seconds){
-//    return true;
-//}
-//else return false;
-//that returns true if and only if the times have the same value.
-//Figure 1:
-return this.hours==another.hours&&this.minutes==another.minutes&&this.seconds==another.seconds;
+        return this.hours == another.hours && this.minutes == another.minutes && this.seconds == another.seconds;
 
-}
+    }
 }
