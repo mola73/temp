@@ -1,14 +1,12 @@
-package lab4;
-
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+package lab4;
 
 /**
  *
- * @author molaniyan
+ * @author muham
  */
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -42,8 +40,8 @@ public class TestCard {
            for(String xy: inputs){
        String  card=xy; 
        System.out.println(card);
-            String rank= card.substring(0,2);
-            String suit=card.substring(2,3);
+            String rank= card.substring(0,1);
+            String suit=card.substring(1,2);
             System.out.printf("it works %s %s %n",rank, suit );
           
             

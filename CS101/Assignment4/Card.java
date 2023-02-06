@@ -1,18 +1,16 @@
-package lab4;
-
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+package lab4;
 
 /**
  *
- * @author molaniyan
+ * @author muham
  */
 import java.util.ArrayList;
 public final class Card {
-    ArrayList Cards= new ArrayList();
+   ArrayList Cards= new ArrayList();
     private Rank cardrank;
    private Suit cardsuit;
    
@@ -47,57 +45,59 @@ public static Card getCard(int i) {
      return sum;
  }
  
- public int getfifteens(ArrayList<Card>cards2){// check this
+ public static String getfifteens(ArrayList<Card>cards2, String cl){// check this
      int comb=0;
+    
   for(Card x : cards2){
-      for (int i=1; i<=cards2.size();i++)
-      {
-          if((cards2.get(i).getRank().count()) +(x.getRank().count())==15){
+       
+      for (int i=0; i<cards2.size();i++){
+          
+          if((cards2.get(i).getRank().count()) +(x.getRank().count())==15 && (x!=cards2.get(i))){
              ++comb; 
           }
           
       }
       
  }
-  return comb;
+  return String.format("%s : there are %d fifteens",cl,comb/2);
  }
  public static Rank convertRank(String x){// convert a string to rank type
          lab4.Rank y=null;
              switch(x){
-         case "Ac":
+         case "A":
              y=Rank.Ace;
              break;
-             case "Tw":
+             case "2":
              y=Rank.Two;
              break;
-             case "Th":
+             case "3":
              y=Rank.Three;
              break;
-             case "Fo":
+             case "4":
              y=Rank.Four;
              break;
-             case "Fi":
+             case "5":
              y=Rank.Five;
              break;
-             case "Si":
+             case "6":
              y=Rank.Six;
              break;
-             case "Se":
+             case "7":
              y=Rank.Seven;
              break;
-             case "Ei":
+             case "8":
              y=Rank.Eight;
              break;
-             case "Ni":
+             case "9":
              y=Rank.Nine;
              break;
-             case "Ki":
+             case "K":
              y=Rank.King;
              break;
-             case "Qu":
+             case "Q":
              y=Rank.Queen;
              break;
-             case "Ja":
+             case "J":
              y=Rank.Jack;
              break;      
      }
@@ -154,7 +154,6 @@ public static Card getCard(int i) {
  public String toString(){// How do i print a rank and suit type. %...  %...
       return String.format("%s of %s", this.getRank(),symbol(this.getSuit()));
  }
+ 
+  
      }
-     
-
-
