@@ -1,12 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package lab4;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 /**
  *
- * @author muham
+ * @author molaniyan
  */
 import java.util.ArrayList;
 public final class Card {
@@ -36,11 +38,29 @@ public static Card getCard(int i) {
  public Suit getSuit(){
    return this.cardsuit;
 }
-// public int getCribCount(<Card>Cards){
-//     
-//     
-//     
-// }
+ public int getCribCount(ArrayList<Card>Cards){
+     int sum=0;
+     for(Card x: Cards){
+        sum= sum+ x.cardrank.count();
+     }
+     
+     return sum;
+ }
+ 
+ public int getfifteens(ArrayList<Card>cards2){// check this
+     int comb=0;
+  for(Card x : cards2){
+      for (int i=1; i<=cards2.size();i++)
+      {
+          if((cards2.get(i).getRank().count()) +(x.getRank().count())==15){
+             ++comb; 
+          }
+          
+      }
+      
+ }
+  return comb;
+ }
  public static Rank convertRank(String x){// convert a string to rank type
          lab4.Rank y=null;
              switch(x){
@@ -106,15 +126,35 @@ public static Card getCard(int i) {
  
  public static Card convertCard(Rank r, Suit s){
   
-     
+  
      return getCard(r,s);
           
  }
- 
+ public char symbol(Suit x){
+         
+         char symbol=0;
+         switch(x){
+             case Clubs:
+                 symbol= '\u2663';
+                 
+             case Diamonds:
+                 symbol='\u2662';
+                   break;
+             case Hearts:
+                 symbol='\u2661';
+                 break;
+             case Spades:
+                 symbol='\u2660';
+                 break;
+         }
+         return symbol;
+ }
 // 
  @Override
  public String toString(){// How do i print a rank and suit type. %...  %...
-     return String.format("", args)
+      return String.format("%s of %s", this.getRank(),symbol(this.getSuit()));
  }
+     }
+     
 
-}
+
