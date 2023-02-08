@@ -5,7 +5,9 @@
 package lab4;
 
 /**
- *
+ * Muhammad Alfatih Olaniyan
+ * UNBC ID: 230148724
+ *This class counts combinations of fifteen between any 2 cards
  * @author muham
  */
 import java.util.Scanner;
@@ -18,28 +20,28 @@ public class Test15s {
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Please place 5 Cards perLine the cards Rank: A, 2, 3...Q,K Suit: C D H S");
+        while (sc.hasNext()) {
+            cards2.clear();
+            if (sc.hasNextLine()) {
+                String cardss = sc.nextLine();
+                String[] inputs = cardss.split(" ");
 
-        if (sc.hasNextLine()) {
-            String cardss = sc.nextLine();
-            String[] inputs = cardss.split(" ");
+                for (String xy : inputs) {
+                    String card = xy;
 
-            for (String xy : inputs) {
-                String card = xy;
-                System.out.println(card);
-                String rank = card.substring(0, 1);
-                String suit = card.substring(1, 2);
-                System.out.printf("it works %s %s %n", rank, suit);
+                    String rank = card.substring(0, 1);
+                    String suit = card.substring(1, 2);
 
-                Rank x = (Card.convertRank(rank));
-                System.out.println(x);
-                Suit y = (Card.convertSuit(suit));
-                System.out.println(y);
-                cards2.add(Card.convertCard(x, y));
+                    Rank x = (Card.convertRank(rank));
 
+                    Suit y = (Card.convertSuit(suit));
+
+                    cards2.add(Card.convertCard(x, y));
+
+                }
+                System.out.println(Card.getfifteens(cards2, cardss));
             }
-            System.out.println(Card.getfifteens(cards2, cardss));
         }
 
     }
 }
-//AcH KiS FiD QuC

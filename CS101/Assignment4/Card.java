@@ -4,7 +4,9 @@
  */
 package lab4;
 
-/**
+/**Muhammad Alfatih Olaniyan
+ * UNBC ID:230148724
+ * 
  *
  * @author muham
  */
@@ -21,9 +23,19 @@ public final class Card {
         this.cardsuit = s;
     }
 
-    private Card(int i) {
+    private Card(int i) {//Make an array of all 52 cards and pick 1 with i, then assign it to the attributes being created
+ ArrayList<Card> deck = new ArrayList();
+ Rank[] rands= Rank.values();
+ Suit[] randss=Suit.values();
+ for(int x=0;x<4;x++){
+     for(int j=0;j<rands.length;j++){
+          
+         deck.add(new Card(rands[j],randss[i]));
+     }
+ }
         if (i >= 0 && i <= 52) {
-
+            this.cardrank = deck.get(i).getRank();
+            this.cardsuit = deck.get(i).getSuit();
         }
     }
 
@@ -52,7 +64,10 @@ public final class Card {
         return String.format("%s : total count is %d", line, sum);
     }
 
-    public static String getfifteens(ArrayList<Card> cards2, String cl) {// check this
+    public static String getfifteens(ArrayList<Card> cards2, String cl) {
+        if (cards2.size() > 5 || cards2.size() < 5) {
+            return String.format("That is not 5 cards");
+        }
         int comb = 0;
 
         for (Card x : cards2) {
@@ -99,6 +114,9 @@ public final class Card {
             case "9":
                 y = Rank.Nine;
                 break;
+            case "T":
+                y = Rank.Ten;
+                break;
             case "K":
                 y = Rank.King;
                 break;
@@ -138,9 +156,9 @@ public final class Card {
 
     }
 
-    public char symbol(Suit x) {
+    public char symbol(Suit x) {// switch a given a suit to its symbol
 
-        char symbol = 0;
+        char symbol = ' ';
         switch (x) {
             case Clubs:
                 symbol = '\u2663';
