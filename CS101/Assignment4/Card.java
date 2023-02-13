@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package lab4;
+
 
 /**Muhammad Alfatih Olaniyan
  * UNBC ID:230148724
@@ -12,7 +12,7 @@ package lab4;
  */
 import java.util.ArrayList;
 
-public final class Card {
+public class Card {
 
     ArrayList cards = new ArrayList();
     private Rank cardrank;
@@ -25,18 +25,30 @@ public final class Card {
 
     private Card(int i) {//Make an array of all 52 cards and pick 1 with i, then assign it to the attributes being created
  ArrayList<Card> deck = new ArrayList();
- Rank[] rands= Rank.values();
- Suit[] randss=Suit.values();
- for(int x=0;x<4;x++){
-     for(int j=0;j<rands.length;j++){
-          
-         deck.add(new Card(rands[j],randss[i]));
-     }
- }
+ Rank[] r= Rank.values();
+ Suit[] s=Suit.values();
+        for (Suit x  : s) {
+            for (Rank y: r) {
+                deck.add(new Card(y, x));
+            }  
+        }
         if (i >= 0 && i <= 52) {
             this.cardrank = deck.get(i).getRank();
             this.cardsuit = deck.get(i).getSuit();
         }
+    }
+    
+    public static ArrayList<Card> getDeck(){// how do i make a deck in a class?
+         ArrayList<Card> deck = new ArrayList();
+ Rank[] ranks= Rank.values();
+ Suit[] suits=Suit.values();
+ for(int x=0;x<4;x++){
+     for(int j=0;j<ranks.length;j++){
+          
+         deck.add(new Card(ranks[j],suits[x]));
+     }
+ }
+ return deck;
     }
 
     public static Card getCard(Rank r, Suit s) { // public static mhtods for Constructors
@@ -85,7 +97,7 @@ public final class Card {
     }
 
     public static Rank convertRank(String x) {// convert a string to rank type
-        lab4.Rank y = null;
+        Rank y = null;
         switch (x) {
             case "A":
                 y = Rank.Ace;
@@ -131,7 +143,7 @@ public final class Card {
     }
 
     public static Suit convertSuit(String x) {//convert a Stirng to a suit type
-        lab4.Suit y = null;
+        Suit y = null;
         switch (x) {
             case "C":
                 y = Suit.Clubs;
