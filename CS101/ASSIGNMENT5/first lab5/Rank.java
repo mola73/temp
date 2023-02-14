@@ -51,6 +51,7 @@ public enum Rank {
              break;
              case 10:
                  y="K";
+                 break;
              case 11:
              y="Q";
              break;
